@@ -14,6 +14,10 @@ RUN set -xe \
 	&& rm elixir-src.tar.gz \
 	&& cd /usr/local/src/elixir \
 	&& make install clean
+	&& useradd -ms /bin/bash cirunner
+        && mkdir /builds && chown cirunner:cirunner /builds
+
+USER cirunner
 
 CMD ["iex"]
 
