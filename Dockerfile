@@ -1,10 +1,12 @@
-FROM erlang:20.2.1
+FROM erlang:20.3
 
 # elixir expects utf8.
 ENV ELIXIR_VERSION="v1.6.5" \
 	LANG=C.UTF-8
 
 RUN set -xe \
+	&& apt-get update \
+	&& apt-get -y install lsof \
 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" \
 	&& ELIXIR_DOWNLOAD_SHA256="defe2bed953ee729addf1121db3fa42a618ef1d6c57a1f489da03b0e7a626e89" \
 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL \
