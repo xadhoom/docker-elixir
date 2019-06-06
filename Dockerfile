@@ -8,7 +8,7 @@ RUN set -xe \
 	&& apt-get update \
 	&& apt-get -y install lsof \
 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" \
-	&& ELIXIR_DOWNLOAD_SHA512="bc50c7f766196d961e26c912ead53257b95c421cfab81c6cf58d5ae4f3e3b646ea262f75e31d23de66761e8e1aacaa42fca42b110869f08428881b748095e2d6" \
+	&& ELIXIR_DOWNLOAD_SHA512="7f263a8f43ffa464ac38388682057f565ca49258c48deea1fed0acfa2c178f544f76fa6fa666c98d4dad7b7ea5cc63e5dd234f00045b80b7547553dc0db2a786" \
 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL \
 	&& echo "$ELIXIR_DOWNLOAD_SHA512  elixir-src.tar.gz" | sha512sum -c - \
 	&& mkdir -p /usr/local/src/elixir \
