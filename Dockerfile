@@ -11,7 +11,10 @@ ENV	ELIXIR_DOWNLOAD_SHA512="7f263a8f43ffa464ac38388682057f565ca49258c48deea1fed0
 
 RUN set -xe \	
 	&& yum clean all && yum update -y \
-	&& yum install -y rpm-build createrepo epel-release make \
+	&& yum install -y rpm-build createrepo epel-release make git \
+	&& yum groups mark install "Development Tools" \
+	&& yum groups mark convert "Development Tools" \
+	&& yum groupinstall -y "Development Tools" \
 	&& yum install -y "${ERLANG_RPM}" \
 	&& curl -fSL -o elixir-src.tar.gz "${ELIXIR_DOWNLOAD_URL}" \
 	&& echo "${ELIXIR_DOWNLOAD_SHA512}  elixir-src.tar.gz" | sha512sum -c - \
