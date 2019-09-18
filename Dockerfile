@@ -11,7 +11,7 @@ ENV ELIXIR_DOWNLOAD_SHA512="4cfc672d3a2d02e044ffa305ae2986658a431a264b7e06b0fde1
 
 RUN set -xe \	
 	&& yum clean all && yum update -y \
-	&& yum install -y rpm-build createrepo epel-release make git lsof \
+	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which\
 	&& yum groups mark install "Development Tools" \
 	&& yum groups mark convert "Development Tools" \
 	&& yum groupinstall -y "Development Tools" \
