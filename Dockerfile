@@ -3,11 +3,11 @@ FROM centos:7
 # elixir expects utf8.
 ENV LANG=en_US.utf8
 
-ENV ERLANG_RPM="https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_21.3.8.2-1~centos~7_amd64.rpm"
+ENV ERLANG_RPM="https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.4-1~centos~7_amd64.rpm"
 
-ENV ELIXIR_VERSION="v1.9.1"
+ENV ELIXIR_VERSION="v1.9.4"
 ENV ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz"
-ENV ELIXIR_DOWNLOAD_SHA512="4cfc672d3a2d02e044ffa305ae2986658a431a264b7e06b0fde1773d8d062bde27ea06f0d31433107ef8bfdf6e931c75c6a39de81bc54b275e06edbe0cc87bda"
+ENV ELIXIR_DOWNLOAD_SHA512="c97b93c7438efd7215408525a3b9f2935a1591cce3da3eb31717282d06aff94e8e3d22c405bac40c671bcfe8e73f3dd1ada315f53dee73ceef0bfe2a7c27e86d"
 
 RUN set -xe \	
 	&& yum clean all && yum update -y \
