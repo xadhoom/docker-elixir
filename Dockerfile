@@ -3,7 +3,7 @@ FROM centos:7
 # elixir expects utf8.
 ENV LANG=en_US.utf8
 
-ENV ERLANG_RPM="https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.4-1~centos~7_amd64.rpm"
+ENV ERLANG_RPM="https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.6-1~centos~7_amd64.rpm"
 
 ENV ELIXIR_VERSION="v1.9.4"
 ENV ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz"
