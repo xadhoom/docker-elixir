@@ -5,9 +5,9 @@ ENV LANG=en_US.utf8
 
 ENV ERLANG_RPM="https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_21.3.8.14-1~centos~7_amd64.rpm"
 
-ENV ELIXIR_VERSION="v1.9.4"
+ENV ELIXIR_VERSION="v1.10.2"
 ENV ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz"
-ENV ELIXIR_DOWNLOAD_SHA512="c97b93c7438efd7215408525a3b9f2935a1591cce3da3eb31717282d06aff94e8e3d22c405bac40c671bcfe8e73f3dd1ada315f53dee73ceef0bfe2a7c27e86d"
+ENV ELIXIR_DOWNLOAD_SHA512="a1d1c7847fc8135865d063c6e014bee970066ba07f979f308bec456a732f5366a9343631239965d1caeeaea5cdb644f35185fdfb23f18fcc8c6735a7e3256c0f"
 
 RUN set -xe \	
 	&& yum clean all && yum update -y \
