@@ -26,6 +26,8 @@ RUN set -xe \
 	&& useradd -ms /bin/bash cirunner \
     && mkdir /builds && chown cirunner:cirunner /builds
 
+STOPSIGNAL SIGINT
+
 USER cirunner
 
 CMD ["iex"]
