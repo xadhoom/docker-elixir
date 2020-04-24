@@ -26,8 +26,6 @@ RUN set -xe \
 	&& useradd -ms /bin/bash cirunner \
     && mkdir /builds && chown cirunner:cirunner /builds
 
-ENTRYPOINT ["/tini", "--"]
-
 USER cirunner
 
 CMD ["iex"]
