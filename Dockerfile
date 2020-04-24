@@ -26,7 +26,7 @@ RUN set -xe \
 	&& useradd -ms /bin/bash cirunner \
     && mkdir /builds && chown cirunner:cirunner /builds
 
-ENTRYPOINT ["/tini", "-v", "--", "/app/bin/docker-entrypoint.sh"]
+ENTRYPOINT ["/tini", "--"]
 
 USER cirunner
 
