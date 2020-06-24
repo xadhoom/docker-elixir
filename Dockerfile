@@ -14,7 +14,7 @@ ENV NODESOURCE="https://rpm.nodesource.com/pub_10.x/el/7/x86_64/nodesource-relea
 RUN set -xe \
         && yum install -y ${NODESOURCE} \
 	&& yum clean all && yum update -y \
-	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs \
+	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs sox \
 	&& yum groups mark install "Development Tools" \
 	&& yum groups mark convert "Development Tools" \
 	&& yum groupinstall -y "Development Tools" \
