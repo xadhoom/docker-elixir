@@ -5,9 +5,9 @@ ENV LANG=en_US.utf8
 
 ENV ERLANG_RPM="https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.3.2-1~centos~7_amd64.rpm"
 
-ENV ELIXIR_VERSION="v1.9.4"
+ENV ELIXIR_VERSION="v1.10.4"
 ENV ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz"
-ENV ELIXIR_DOWNLOAD_SHA512="c97b93c7438efd7215408525a3b9f2935a1591cce3da3eb31717282d06aff94e8e3d22c405bac40c671bcfe8e73f3dd1ada315f53dee73ceef0bfe2a7c27e86d"
+ENV ELIXIR_DOWNLOAD_SHA512="844e405cf344539a9d32dc7f1ead0dc1dfb0d70a9ab718269f4e25e5262f611f96346f5be93cf8e34a75c58c6aabb12e8a796c5cb182955922510c270ef169e7"
 
 ENV NODESOURCE="https://rpm.nodesource.com/pub_10.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm"
 
