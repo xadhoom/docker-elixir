@@ -3,7 +3,7 @@ FROM quay.io/centos/centos:7
 # elixir expects utf8.
 ENV LANG=en_US.utf8
 
-ENV ERLANG_VERSION=23.3.1
+ENV ERLANG_VERSION=24.0.5
 
 ENV ELIXIR_VERSION="v1.11.4"
 ENV ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz"
@@ -12,9 +12,9 @@ ENV ELIXIR_DOWNLOAD_SHA512="5dc940a31a31ae1c1537f874c15e58311cc0b0452f61e923bdfd
 ENV NODESOURCE="https://rpm.nodesource.com/pub_10.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm"
 
 RUN set -xe \
+	&& yum clean all && yum update -y \
 	&& yum install -y yum-plugin-copr \
 	&& yum copr enable -y mbrancaleoni/erlang \
-	&& yum clean all && yum update -y \
 	&& yum install -y ${NODESOURCE} \
 	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs sox openssl \
 	&& yum groups mark install "Development Tools" \
