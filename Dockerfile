@@ -1,4 +1,4 @@
-FROM centos:7
+FROM quay.io/centos/centos:7
 
 # elixir expects utf8.
 ENV LANG=en_US.utf8
@@ -15,13 +15,13 @@ RUN set -xe \
 	&& yum clean all && yum update -y \
 	&& yum install -y ${NODESOURCE} \
 	&& yum install -y yum-plugin-copr \
-    && yum copr enable -y mbrancaleoni/erlang \
+	&& yum copr enable -y mbrancaleoni/erlang \
 	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs sox openssl \
 	&& yum groups mark install "Development Tools" \
 	&& yum groups mark convert "Development Tools" \
 	&& yum groupinstall -y "Development Tools" \
 	&& yum install -y "erlang-${ERLANG_VERSION}" \
-    && yum copr disable -y mbrancaleoni/erlang \
+	&& yum copr disable -y mbrancaleoni/erlang \
 	&& curl -fSL -o elixir-src.tar.gz "${ELIXIR_DOWNLOAD_URL}" \
 	&& echo "${ELIXIR_DOWNLOAD_SHA512}  elixir-src.tar.gz" | sha512sum -c - \
 	&& mkdir -p /usr/local/src/elixir \
