@@ -3,7 +3,7 @@ FROM quay.io/centos/centos:7
 # elixir expects utf8.
 ENV LANG=en_US.utf8
 
-ENV ERLANG_VERSION=24.0.5
+ENV ERLANG_VERSION=24.0.6
 
 ENV ELIXIR_VERSION="v1.11.4"
 ENV ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz"
@@ -16,7 +16,7 @@ RUN set -xe \
 	&& yum install -y yum-plugin-copr \
 	&& yum copr enable -y mbrancaleoni/erlang \
 	&& yum install -y ${NODESOURCE} \
-	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs sox openssl \
+	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs sox openssl mariadb \
 	&& yum groups mark install "Development Tools" \
 	&& yum groups mark convert "Development Tools" \
 	&& yum groupinstall -y "Development Tools" \
