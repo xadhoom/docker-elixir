@@ -3,7 +3,7 @@ FROM quay.io/centos/centos:7
 # elixir expects utf8.
 ENV LANG=en_US.utf8
 
-ENV ERLANG_VERSION=24.0.6
+ENV ERLANG_VERSION=24.1.2
 
 ENV ELIXIR_VERSION="v1.11.4"
 ENV ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz"
