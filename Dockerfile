@@ -16,7 +16,7 @@ RUN set -xe \
 	&& yum install -y yum-plugin-copr \
 	&& yum copr enable -y mbrancaleoni/erlang \
 	&& yum install -y ${NODESOURCE} \
-	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs sox openssl mariadb \
+	&& yum install -y rpm-build createrepo epel-release make git lsof openssh-clients which nodejs sox openssl mariadb yajl \
 	&& yum groups mark install "Development Tools" \
 	&& yum groups mark convert "Development Tools" \
 	&& yum groupinstall -y "Development Tools" \
